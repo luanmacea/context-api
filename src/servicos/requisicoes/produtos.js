@@ -22,8 +22,8 @@ export async function pegarProdutos() {
 export async function limparProdutos(item) {
   try {
     console.log(item)
-    // const resultado = await api.delete("/produtos");
-    // return resultado.data;
+    const resultado = await api.delete(`/produtos/${item}`);
+    return resultado.data;
   } catch (erro) {
     console.log(erro);
     return [];

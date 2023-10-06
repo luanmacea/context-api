@@ -30,9 +30,10 @@ export function ProdutosProvider({ children }) {
     setUltimosVistos([...novoUltimosVistos])
   }
 
-  async function Finalizar() {
-    const resultado = await limparProdutos();
-    setCarrinho(resultado);
+  async function Finalizar(id) {
+    const resultado = await limparProdutos(id);
+    setCarrinho([]);
+    setUltimosVistos([]);
     setQuantidade(0);
   }
 

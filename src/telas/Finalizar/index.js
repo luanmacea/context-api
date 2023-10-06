@@ -26,6 +26,13 @@ export default function Finalizar({ navigation }) {
     return total;
   };
 
+  function LimparCarrinho() {
+    carrinho.forEach((item) => {
+      Finalizar(item.id);
+    })
+    navigation.navigate("Principal");
+  }
+
   return (
     <View style={estilo.container}>
       <StatusBar />
@@ -38,7 +45,7 @@ export default function Finalizar({ navigation }) {
       </View>
       <Text style={estilo.Textinforesumo}>Quantidade: {quantidade}</Text>
       <Text style={estilo.Textinforesumo}>Preço: {valorTotal()}</Text>
-      <TouchableOpacity style={estilo.botao} onPress={() => Finalizar(teste())}>
+      <TouchableOpacity style={estilo.botao} onPress={() => LimparCarrinho()}>
         <Text style={estilo.botaoTexto}>Finalizar</Text>
       </TouchableOpacity>
       {/* </View> */}
